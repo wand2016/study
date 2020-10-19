@@ -17,6 +17,13 @@ jobs:
         uses: actions/checkout@v2
         with:
           path: "content/blog"
+      - name: npm ci
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            node-
       - name: Cache multiple paths
         uses: actions/cache@v2
         with:
