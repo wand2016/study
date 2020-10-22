@@ -29,12 +29,12 @@ jobs:
         if: steps.cache-node_modules.outputs.cache-hit != 'true'
         run: npm ci
 
-      - name: cache gatsby
-        uses: actions/cache@v2
-        with:
-          path: |
-            .cache
-          key: "fixed"
+      # - name: cache gatsby
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: |
+      #       .cache
+      #     key: "fixed"
       - name: build and deploy
         run: ./deploy.sh
         env:
