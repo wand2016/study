@@ -1,0 +1,25 @@
+@startuml
+
+package study_gatsby {
+  class gatsby環境
+  class studyサブモジュール
+}
+
+
+package study {
+  class 記事のmarkdown
+  class 画像等
+  class デプロイアクション
+}
+
+studyサブモジュール o-d-> study
+
+
+デプロイアクション -> gatsby環境
+note right on link
+デプロイアクションと
+gatsby環境が分かれていてつらい
+end note
+
+
+@enduml
