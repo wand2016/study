@@ -1,0 +1,19 @@
+name: "dispatch study_gatsby repo's Actions"
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  publish:
+    runs-on: ubuntu-16.04
+    steps:
+    - name: Create GitHub dispatch event
+      run: |
+        curl --request POST 'https://api.github.com/repos/wand2016/study_gatsby/dispatches' \
+        --header 'Authorization: Bearer ${{secrets.ACCESS_TOKEN_FOR_DISPATCH}}' \
+        --header 'Content-Type: application/json' \
+        --data-raw '{
+          "event_type": "study blog contents updated"
+        }'
