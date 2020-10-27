@@ -1,0 +1,23 @@
+@startuml
+
+set namespaceSeparator none
+
+skinparam class. {
+  BackgroundColor<<deleted>> Gray
+}
+
+class .
+
+class com.
+note right: d-horiyama.com IN NS ns1-hogehoge.org.
+
+class d-horiyama.com.(old) <<deleted>>
+note bottom: d-horiyama.com IN NS ns1-hogehoge.org.
+class d-horiyama.com.
+note bottom: d-horiyama.com IN NS ns2-piyopiyo.uk.
+
+"." -d-> "com.": <<delegation>>
+"com." -d-> "d-horiyama.com.(old)": <<delegation>>
+"com." -d-> "d-horiyama.com.": <<delegation>>
+
+@enduml

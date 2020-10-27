@@ -1,0 +1,16 @@
+@startuml
+
+set namespaceSeparator none
+
+class .
+
+class com.
+note right: d-horiyama.com. IN NS ns1-hogehoge.org.
+
+class d-horiyama.com.
+note right: d-horiyama.com. IN NS ns1-hogehoge.org.
+
+"." -d-> "com.": <<delegation>>
+"com." -d-> "d-horiyama.com.": <<delegation>>
+
+@enduml
