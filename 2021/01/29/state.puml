@@ -1,0 +1,11 @@
+@startuml
+'https://plantuml.com/state-diagram
+
+hide empty description
+
+[*] -> 待機中
+待機中 -> 計測中: START
+計測中 --> 一時停止中: STOP
+一時停止中 --> 計測中: START
+一時停止中 --> 待機中: RESET
+@enduml
