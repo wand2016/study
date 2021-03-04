@@ -1,0 +1,25 @@
+@startuml
+'https://plantuml.com/state-diagram
+
+left to right direction
+
+rectangle テスト対象(サブ)システム {
+  usecase 機能A
+  usecase 機能B
+
+  機能A -[hidden]r- 機能B
+}
+
+actor 外部システム
+actor マイクロサービス
+外部システム -[hidden]r- マイクロサービス
+
+機能A -- 外部システム
+note on link: ここをテストする
+
+機能B -- 外部システム
+note on link: ここをテストする
+機能B -- マイクロサービス
+note on link: ここをテストする
+
+@enduml

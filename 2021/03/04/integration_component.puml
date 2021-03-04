@@ -1,0 +1,25 @@
+@startuml
+'https://plantuml.com/state-diagram
+
+left to right direction
+
+rectangle テスト対象コンポーネント {
+  usecase 機能A
+  usecase 機能B
+
+  機能A -[hidden]r- 機能B
+}
+
+actor 別コンポーネントx
+actor 別コンポーネントy
+別コンポーネントx -[hidden]r- 別コンポーネントy
+
+機能A -- 別コンポーネントx
+note on link: ここをテストする
+
+機能B -- 別コンポーネントx
+note on link: ここをテストする
+機能B -- 別コンポーネントy
+note on link: ここをテストする
+
+@enduml
